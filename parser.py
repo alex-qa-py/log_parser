@@ -18,7 +18,7 @@ top_error_server_requests = Counter()
 top_requests_time = []
 
 
-def file():
+def create_list_of_files():
     file_list = []
     if args.file is not None:
         file_list.append(args.file)
@@ -28,7 +28,7 @@ def file():
 
 
 file_counter = 0
-for item in file():
+for item in create_list_of_files():
     if item.endswith(args.ext):
         with open(item) as file:
             try:
