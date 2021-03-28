@@ -27,7 +27,6 @@ def create_list_of_files():
         return os.listdir(args.dir)
 
 
-file_counter = 0
 for item in create_list_of_files():
     if item.endswith(args.ext):
         with open(item) as file:
@@ -63,7 +62,6 @@ for item in create_list_of_files():
 
             top_requests_time.sort(key=lambda x: x[1])
 
-        file_counter += 1
         with open(f"result{item.title()}.json", "a+") as write:
             data = {
                 "METHODS": [
